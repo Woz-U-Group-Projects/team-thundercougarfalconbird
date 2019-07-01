@@ -8,7 +8,7 @@ Minimum Requirements:
 
     1.	Front End – Angular
     2.	Back End – Node + Express
-    3.	Database – NoSQL
+    3.	Database – MySQL
     4.	Style – CSS
     5.	Responsive
     
