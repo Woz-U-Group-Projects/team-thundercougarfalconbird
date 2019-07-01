@@ -1,14 +1,21 @@
 Team: ThunderCougarFlaconBird
+
 App Name: SaleBev
+
 GitHub: https://github.com/Woz-U-Group-Projects/team-thundercougarfalconbird.git
+
 Minimum Requirements:
+
     1.	Front End – Angular
     2.	Back End – Node + Express
     3.	Database – NoSQL
     4.	Style – CSS
     5.	Responsive
+    
 Beverage Sales App Pages:
+
 User Experience:
+
     1.	User Registration – Allows the user to create a unique id that is linked to only them.
         a.	First and Last Name
         b.	Create a unique username
@@ -61,7 +68,9 @@ User Experience:
         a.	Shows all items added in descending recent order
     10.	Contact Us
         a.	Issue Ticket – Allows user to rescind an order or if a problem occurs with the website.
+        
 Admin:
+
     1.	View All Users – By Customer Id in numerical order
     2.	View All Tickets
     3.	Respond to Tickets 
@@ -76,7 +85,9 @@ Admin:
         a.	Received
         b.	Completed
         c.	Paid
+        
 Stretch Goals:
+
     1.	Deploy to AWS
     2.	Integrate API: Paypal for payment, Dropbox to save Wishlist
     3.	Many to Many relationship: Include multiple items with similar keywords or ratings
