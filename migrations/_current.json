@@ -67,43 +67,39 @@
                     "seqType": "Sequelize.INTEGER(11)"
                 },
                 "FirstName": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "FirstName",
-                    "seqType": "Sequelize.STRING(45)"
+                    "seqType": "Sequelize.STRING(255)"
                 },
                 "LastName": {
-                    "allowNull": false,
-                    "field": "LastName",
-                    "seqType": "Sequelize.STRING(45)"
-                },
-                "Username": {
-                    "allowNull": false,
-                    "unique": true,
-                    "field": "Username",
-                    "seqType": "Sequelize.STRING(45)"
-                },
-                "UserImage": {
                     "allowNull": true,
-                    "field": "UserImage",
+                    "field": "LastName",
                     "seqType": "Sequelize.STRING(255)"
                 },
                 "Email": {
-                    "allowNull": false,
+                    "allowNull": true,
+                    "unique": true,
                     "field": "Email",
-                    "seqType": "Sequelize.STRING(45)"
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "Username": {
+                    "allowNull": true,
+                    "unique": true,
+                    "field": "Username",
+                    "seqType": "Sequelize.STRING(255)"
                 },
                 "Password": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "Password",
-                    "seqType": "Sequelize.STRING(45)"
+                    "seqType": "Sequelize.STRING(255)"
                 },
                 "createdAt": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "createdAt",
                     "seqType": "Sequelize.DATE"
                 },
                 "updatedAt": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
                 }
@@ -111,5 +107,5 @@
             "indexes": []
         }
     },
-    "revision": 1
+    "revision": 2
 }

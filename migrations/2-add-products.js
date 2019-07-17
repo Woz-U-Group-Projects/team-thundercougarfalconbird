@@ -5,64 +5,72 @@ var Sequelize = require('sequelize');
 /**
  * Actions summary:
  *
- * createTable "users", deps: []
+ * createTable "products", deps: []
  *
  **/
 
 var info = {
-    "revision": 1,
-    "name": "initial_migration",
-    "created": "2019-07-17T17:50:31.671Z",
+    "revision": 2,
+    "name": "add-products",
+    "created": "2019-07-17T18:08:54.098Z",
     "comment": ""
 };
 
 var migrationCommands = [{
     fn: "createTable",
     params: [
-        "users",
+        "products",
         {
-            "UserId": {
+            "ProductId": {
                 "type": Sequelize.INTEGER(11),
-                "field": "UserId",
+                "field": "ProductId",
                 "primaryKey": true,
                 "allowNull": false
             },
-            "FirstName": {
-                "type": Sequelize.STRING(255),
-                "field": "FirstName",
+            "ProductName": {
+                "type": Sequelize.STRING(45),
+                "field": "ProductName",
+                "allowNull": false
+            },
+            "Department": {
+                "type": Sequelize.STRING(45),
+                "field": "Department",
                 "allowNull": true
             },
-            "LastName": {
-                "type": Sequelize.STRING(255),
-                "field": "LastName",
+            "Style": {
+                "type": Sequelize.STRING(45),
+                "field": "Style",
                 "allowNull": true
             },
-            "Email": {
+            "Price": {
+                "type": Sequelize.DECIMAL,
+                "field": "Price",
+                "allowNull": false
+            },
+            "Description": {
                 "type": Sequelize.STRING(255),
-                "field": "Email",
-                "unique": true,
+                "field": "Description",
                 "allowNull": true
             },
-            "Username": {
+            "ProductImage": {
                 "type": Sequelize.STRING(255),
-                "field": "Username",
-                "unique": true,
+                "field": "ProductImage",
                 "allowNull": true
             },
-            "Password": {
-                "type": Sequelize.STRING(255),
-                "field": "Password",
+            "Rating": {
+                "type": Sequelize.DECIMAL,
+                "field": "Rating",
                 "allowNull": true
             },
             "createdAt": {
                 "type": Sequelize.DATE,
                 "field": "createdAt",
-                "allowNull": true
+                "allowNull": false
             },
             "updatedAt": {
                 "type": Sequelize.DATE,
                 "field": "updatedAt",
-                "allowNull": true
+                "allowNull": false
             }
         },
         {}
