@@ -2,37 +2,45 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
-    ProductId: {
+    productId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true
     },
-    ProductName: {
+    productName: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    Department: {
+    department: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    Style: {
+    style: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    Price: {
+    price: {
       type: DataTypes.DECIMAL,
       allowNull: false
     },
-    Description: {
+    description: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    ProductImage: {
+    productImage: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    Rating: {
+    rating: {
       type: DataTypes.DECIMAL,
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
       allowNull: true
     }
   }, {

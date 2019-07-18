@@ -43,16 +43,6 @@
                     "allowNull": true,
                     "field": "rating",
                     "seqType": "Sequelize.DECIMAL"
-                },
-                "createdAt": {
-                    "allowNull": true,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": true,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -108,5 +98,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 2
 }

@@ -4,7 +4,10 @@
     "password": "Password1!",
     "database": "salebevdb",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": { "timestamps": false },
+    "operatorsAliases": "Sequelize.Op",
+    "logging": true
   },
   "test": {
     "username": "root",

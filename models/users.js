@@ -2,35 +2,41 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('users', {
-    UserId: {
+    userId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
-    FirstName: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    LastName: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    Username: {
-      type: DataTypes.STRING(45),
-      allowNull: false,
-      unique: true
-    },
-    UserImage: {
+    firstName: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    Email: {
-      type: DataTypes.STRING(45),
-      allowNull: false
+    lastName: {
+      type: DataTypes.STRING(255),
+      allowNull: true
     },
-    Password: {
-      type: DataTypes.STRING(45),
-      allowNull: false
+    email: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      unique: true
+    },
+    username: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      unique: true
+    },
+    password: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     tableName: 'users'
