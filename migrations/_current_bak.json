@@ -1,39 +1,87 @@
 {
     "tables": {
+        "products": {
+            "tableName": "products",
+            "schema": {
+                "productId": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "productId",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "productName": {
+                    "allowNull": false,
+                    "field": "productName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "department": {
+                    "allowNull": true,
+                    "field": "department",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "style": {
+                    "allowNull": true,
+                    "field": "style",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "price": {
+                    "allowNull": false,
+                    "field": "price",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "description": {
+                    "allowNull": true,
+                    "field": "description",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "productImage": {
+                    "allowNull": true,
+                    "field": "productImage",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "rating": {
+                    "allowNull": true,
+                    "field": "rating",
+                    "seqType": "Sequelize.DECIMAL"
+                }
+            },
+            "indexes": []
+        },
         "users": {
             "tableName": "users",
             "schema": {
-                "UserId": {
+                "userId": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "UserId",
+                    "autoIncrement": true,
+                    "field": "userId",
                     "seqType": "Sequelize.INTEGER(11)"
                 },
-                "FirstName": {
+                "firstName": {
                     "allowNull": true,
-                    "field": "FirstName",
+                    "field": "firstName",
                     "seqType": "Sequelize.STRING(255)"
                 },
-                "LastName": {
+                "lastName": {
                     "allowNull": true,
-                    "field": "LastName",
+                    "field": "lastName",
                     "seqType": "Sequelize.STRING(255)"
                 },
-                "Email": {
+                "email": {
                     "allowNull": true,
                     "unique": true,
-                    "field": "Email",
+                    "field": "email",
                     "seqType": "Sequelize.STRING(255)"
                 },
-                "Username": {
+                "username": {
                     "allowNull": true,
                     "unique": true,
-                    "field": "Username",
+                    "field": "username",
                     "seqType": "Sequelize.STRING(255)"
                 },
-                "Password": {
+                "password": {
                     "allowNull": true,
-                    "field": "Password",
+                    "field": "password",
                     "seqType": "Sequelize.STRING(255)"
                 },
                 "createdAt": {
@@ -50,5 +98,5 @@
             "indexes": []
         }
     },
-    "revision": 1
+    "revision": 2
 }
