@@ -1,1 +1,16 @@
-<p>inventory works!</p>
+<h3>New Product Entry</h3>
+<p>
+  <input [(ngModel)]="product.productName" placeholder="productName" />
+  <br />
+  <input [(ngModel)]="product.department" placeholder="department" />
+  <br />
+  <input [(ngModel)]="product.style" placeholder="style" />
+  <br />
+  <input [(ngModel)]="product.price" placeholder="price" />
+  <br />
+  <input [(ngModel)]="product.description" placeholder="description" />
+  <br />
+  <input [(ngModel)]="product.productImage" placeholder="productImage" />
+  <br />
+  <button (click)="input()">Input</button>
+</p>

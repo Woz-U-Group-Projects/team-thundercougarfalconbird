@@ -28,7 +28,8 @@ import { ProductComponent } from './product/product.component';
     InventoryComponent, 
     AdminComponent, 
     WishlistComponent, 
-    ShoppingcartComponent, ProductComponent
+    ShoppingcartComponent, 
+    ProductComponent
   ],
   imports: [
     BrowserModule, 
