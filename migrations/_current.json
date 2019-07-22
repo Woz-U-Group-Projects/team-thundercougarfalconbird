@@ -6,6 +6,7 @@
                 "productId": {
                     "allowNull": false,
                     "primaryKey": true,
+                    "autoIncrement": true,
                     "field": "productId",
                     "seqType": "Sequelize.INTEGER(11)"
                 },
@@ -108,5 +109,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 4
 }

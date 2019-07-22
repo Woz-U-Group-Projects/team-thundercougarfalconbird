@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     productId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     productName: {
       type: DataTypes.STRING(45),
