@@ -30,6 +30,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
+    userImage: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    admin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: true
