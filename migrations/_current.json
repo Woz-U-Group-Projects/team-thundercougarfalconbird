@@ -95,6 +95,18 @@
                     "field": "password",
                     "seqType": "Sequelize.STRING(255)"
                 },
+                "userImage": {
+                    "allowNull": true,
+                    "field": "userImage",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "admin": {
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "admin",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
                 "createdAt": {
                     "allowNull": true,
                     "field": "createdAt",
@@ -109,5 +121,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 5
 }
