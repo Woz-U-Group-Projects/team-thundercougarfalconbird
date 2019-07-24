@@ -9,6 +9,7 @@ var cors = require("cors");
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/users");
 var productsRouter = require("./routes/products");
+var wishlistRouter = require("./routes/wishlist");
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(cors({ origin: "http://localhost:4200", credentials: true }));
 app.use("/", indexRouter);
 app.use("/users", userRouter);
 app.use("/products", productsRouter);
+app.use("/wishlist", wishlistRouter);
 
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
