@@ -16,7 +16,7 @@ cd client
 npm install
 ```
 ## To Run Application
-> Open Command Prompt
+> Open Command Prompt,
 > Navigate to Project Folder
 ```
 nodemon
