@@ -1,21 +1,32 @@
-Install Dependencies (Express)
-    npm install
-Recreate the Database
-    sequelize db:migrate
-Seed the Database
-    sequelize db:seed:all
-Install Dependencies (Angular)
-    cd client
-    npm install
-To Run Application
-    Open Command Prompt
-    Navigate to Project Folder
-    Run Command
-        nodemon
-    Open VS Code
-    cd client
-    ng serve --open
-    
+## Install Dependencies (Express)
+```
+npm install
+```
+## Recreate the Database
+```
+sequelize db:migrate
+```
+## Seed the Database
+```
+sequelize db:seed:all
+```
+## Install Dependencies (Angular)
+```
+cd client
+npm install
+```
+## To Run Application
+> Open Command Prompt
+> Navigate to Project Folder
+```
+nodemon
+```
+> Open VS Code
+```
+cd client
+ng serve --open
+```
+
 Team: ThunderCougarFlaconBird
 
 App Name: SaleBev
