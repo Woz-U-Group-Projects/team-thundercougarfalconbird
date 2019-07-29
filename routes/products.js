@@ -44,6 +44,7 @@ router.get('/productlist', function(req, res, next) {
   .findAll({})
   .then(foundProducts => {
     const products = foundProducts.map(product =>({
+      productId: product.productId,
       productName: product.productName,
       price: product.price,
       department: product.department,
@@ -51,6 +52,32 @@ router.get('/productlist', function(req, res, next) {
       description: product.description
     }));
     res.send(JSON.stringify(products));
+  });
+});
+
+router.get('/productview', function(req, res, next) {
+  models.products
+  .findAll({})
+  .then(foundProducts => {
+    const products = foundProducts.map(product =>({
+      productId: product.productId,
+      productName: product.productName,
+      price: product.price,
+      department: product.department,
+      style: product.style,
+      description: product.description
+    }));
+    res.send(JSON.stringify(products));
+  });
+});
+
+router.get('/productview/:id', function(req, res, next) {
+  models.products
+  .findOne({
+    where: { productId: parseInt(req.params.id)}
+  })
+  .then(foundProducts => {
+    res.send(JSON.stringify(foundProducts));
   });
 });
 

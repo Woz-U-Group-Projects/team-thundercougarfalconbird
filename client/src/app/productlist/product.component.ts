@@ -12,11 +12,10 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
   products: Product = new Product();
   
-  constructor(private http: HttpClient, private productService: ProductService) {}
+  constructor(private router: Router, private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProductList().subscribe(product => (this.products = product));
-    
+    this.productService.getProductList().subscribe(product => (this.products = product));  
   }
 
 }

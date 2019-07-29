@@ -7,7 +7,7 @@
     <th>Description</th>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products" [routerLink]="['/productview/',product.productId]">
       <td>{{ product.productName }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.department }}</td>
