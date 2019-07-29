@@ -1,5 +1,5 @@
 <div>
-    <h3>{{ user.firstName }}'s Wishlist!</h3>
+    <h3>{{ wishlist.firstName }}'s Wishlist!</h3>
     <table>
         <thead>
             <th>Name</th>
@@ -9,7 +9,7 @@
             <th>Description</th>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let product of wishlist.products">
                 <td>{{ product.productName }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.department }}</td>

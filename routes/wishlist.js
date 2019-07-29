@@ -4,17 +4,27 @@ var models = require('../models');
 var authService = require("../services/auth");
 
 //Get wishlist
-router.get('/wish', function (req, res, next) {
+router.get('/wish/:id', function (req, res, next) {
   let token = req.cookies.jwt;
   if (token) {
-    authService.verifyUser(token).then(
-      models.wishlist
-        .findAll({})
+      authService.verifyUser(token).then(user =>{
+      if (user.userId === parseInt(req.params.id)){
+      models.users
+        .findOne({
+          attributes:['userId', 'firstName'],
+          where: {
+            userId: parseInt(req.params.id)
+          },
+          include: [{
+            model: models.products,
+            attributes: ['productId', 'productName', 'department', 'style', 'price', 'description']
+          }]
+        })
         .then(wishlist => {
           res.send(JSON.stringify(wishlist));
-        }));
+        })}});
   } else {
-    res.json("Log in")
+    res.render("Please Log in")
   }
 });
 
