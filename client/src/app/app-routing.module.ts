@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "input", component: InventoryComponent },
   { path: "productlist", component: ProductComponent },
-  { path: "productview", component: ProductviewComponent },
+  { path: "productview/:id", component: ProductviewComponent },
   { path: "cart", component: ShoppingcartComponent },
   { path: "wish", component: WishlistComponent },
   { path: "admin", component: AdminComponent}

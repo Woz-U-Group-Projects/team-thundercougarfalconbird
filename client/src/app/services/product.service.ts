@@ -23,8 +23,8 @@ export class ProductService {
     return this.http.post<string>(this.url + "input", product, this.options);
   }
 
-  getProduct(): Observable<Product> {
-    return this.http.get<Product>(this.url + "productview", this.options);
+  getProduct(productId): Observable<Product> {
+    return this.http.get<Product>(this.url + `productview/${productId}`, this.options);
   }
 
   getProductList(): Observable<Product> {
