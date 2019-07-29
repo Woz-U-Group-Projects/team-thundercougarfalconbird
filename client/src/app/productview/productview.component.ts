@@ -9,11 +9,12 @@ import { Product } from '../models/product';
 })
 export class ProductviewComponent implements OnInit {
   product: Product = new Product();
-
-  constructor(private productService: ProductService) { }
+  
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProduct().subscribe(product => (this.product = product));
+    this.productService.getProductList().subscribe(product => (this.product = product));
+    
   }
 
 }

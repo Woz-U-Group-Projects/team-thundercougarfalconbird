@@ -14,7 +14,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { AdminComponent } from './admin/admin.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './productlist/product.component';
 
 @NgModule({
   declarations: [
