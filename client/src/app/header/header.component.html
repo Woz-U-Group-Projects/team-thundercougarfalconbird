@@ -21,6 +21,24 @@
         >Login</a
       >
       <a
+      *ngIf="userService.loggedIn"
+      class="nav-item nav-link"
+      routerLink="/profile"
+      >Profile</a
+      >
+      <a
+      *ngIf="!userService.loggedIn"
+      class="nav-item nav-link"
+      routerLink="productlist"
+      >Products</a
+      >
+      <a 
+      *ngIf="userService.loggedIn" 
+      class="nav-item nav-link" 
+      routerLink="/wish"
+      >Wishlist</a
+      >
+      <a
         *ngIf="userService.loggedIn"
         class="nav-item nav-link"
         href=""
@@ -34,11 +52,12 @@
         >Sign Up</a
       >
       <a
-        *ngIf="userService.loggedIn"
+        *ngIf="!userService.admin"
         class="nav-item nav-link"
-        routerLink="/profile"
-        >Profile</a
+        routerLink="/admin"
+        >Admin Services</a
       >
+     
     </div>
   </div>
 </nav>

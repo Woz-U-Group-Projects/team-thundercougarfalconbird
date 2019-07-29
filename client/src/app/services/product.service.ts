@@ -19,13 +19,15 @@ export class ProductService {
   // boolean value to hold the login status
   loggedIn: boolean = false;
 
-  // register a user, must .subscribe() to trigger
-  // POST baserl/signup
   inputProduct(product: Product): Observable<string> {
     return this.http.post<string>(this.url + "input", product, this.options);
   }
 
   getProduct(): Observable<Product> {
     return this.http.get<Product>(this.url + "productview", this.options);
+  }
+
+  getProductList(): Observable<Product> {
+    return this.http.get<Product>(this.url + "productlist", this.options);
   }
 }

@@ -8,7 +8,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './productlist/product.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: "productlist", component: ProductComponent },
   { path: "productview", component: ProductviewComponent },
   { path: "cart", component: ShoppingcartComponent },
-  { path: "wish", component: WishlistComponent }
+  { path: "wish", component: WishlistComponent },
+  { path: "admin", component: AdminComponent}
 ];
 
 @NgModule({

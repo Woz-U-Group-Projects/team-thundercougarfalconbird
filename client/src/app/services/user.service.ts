@@ -15,8 +15,10 @@ export class UserService {
   // base url of the express back end
   url: string = "http://localhost:3000/users/";
 
-  // boolean value to hold the login status
+  // boolean value to hold the login/admin status
   loggedIn: boolean = false;
+  
+  admin: boolean =false;
 
   // register a user, must .subscribe() to trigger
   // POST baserl/signup
