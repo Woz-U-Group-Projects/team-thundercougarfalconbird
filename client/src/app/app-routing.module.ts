@@ -6,10 +6,9 @@ import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { InventoryComponent } from './inventory/inventory.component';
 import { ProductviewComponent } from './productview/productview.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductComponent } from './productlist/product.component';
-import { AdminComponent } from './admin/admin.component';
+
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -17,12 +16,10 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "profile", component: ProfileComponent },
   { path: "home", component: HomeComponent },
-  { path: "input", component: InventoryComponent },
+  { path: "input/:id", component: InventoryComponent },
   { path: "productlist", component: ProductComponent },
   { path: "productview/:id", component: ProductviewComponent },
-  { path: "cart", component: ShoppingcartComponent },
-  { path: "wishlist/:id", component: WishlistComponent },
-  { path: "admin", component: AdminComponent}
+  { path: "wishlist/:id", component: WishlistComponent }
 ];
 
 @NgModule({
