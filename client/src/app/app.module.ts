@@ -11,9 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { InventoryComponent } from './inventory/inventory.component';
-import { AdminComponent } from './admin/admin.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { ProductComponent } from './productlist/product.component';
 
 @NgModule({
@@ -25,10 +23,8 @@ import { ProductComponent } from './productlist/product.component';
     HomeComponent, 
     ProfileComponent, 
     ProductviewComponent, 
-    InventoryComponent, 
-    AdminComponent, 
+    InventoryComponent,  
     WishlistComponent, 
-    ShoppingcartComponent, 
     ProductComponent
   ],
   imports: [

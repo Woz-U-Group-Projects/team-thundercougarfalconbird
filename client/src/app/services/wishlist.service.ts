@@ -19,7 +19,7 @@ export class WishlistService {
   // boolean value to hold the login status
   loggedIn: boolean = false;
 
-  getWishList(): Observable<any> {
-    return this.http.get<any>(this.url + "wish", this.options);
+  getWishList(id): Observable<Wishlist> {
+    return this.http.get<Wishlist>(this.url + `wish/${id}`, this.options);
   }
 }
