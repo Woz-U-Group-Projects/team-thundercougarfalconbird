@@ -3,10 +3,9 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     productId: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.INTEGER(11).UNSIGNED,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     productName: {
       type: DataTypes.STRING(45),

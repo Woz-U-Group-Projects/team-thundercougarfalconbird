@@ -6,9 +6,8 @@
                 "productId": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "autoIncrement": true,
                     "field": "productId",
-                    "seqType": "Sequelize.INTEGER(11)"
+                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
                 },
                 "productName": {
                     "allowNull": false,
@@ -64,9 +63,8 @@
                 "userId": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "autoIncrement": true,
                     "field": "userId",
-                    "seqType": "Sequelize.INTEGER(11)"
+                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
                 },
                 "firstName": {
                     "allowNull": true,
@@ -120,34 +118,34 @@
             },
             "indexes": []
         },
-        "wishlist": {
-            "tableName": "wishlist",
+        "user_products": {
+            "tableName": "user_products",
             "schema": {
                 "userId": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "userId",
-                    "unique": "wishlist_productId_userId_unique",
                     "references": {
                         "model": "users",
                         "key": "userId"
                     },
+                    "field": "userId",
+                    "unique": "user_products_productId_userId_unique",
                     "onDelete": "CASCADE",
                     "onUpdate": "CASCADE",
-                    "seqType": "Sequelize.INTEGER(11)"
+                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
                 },
                 "productId": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "productId",
-                    "unique": "wishlist_productId_userId_unique",
                     "references": {
                         "model": "products",
                         "key": "productId"
                     },
+                    "field": "productId",
+                    "unique": "user_products_productId_userId_unique",
                     "onDelete": "CASCADE",
                     "onUpdate": "CASCADE",
-                    "seqType": "Sequelize.INTEGER(11)"
+                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
                 },
                 "createdAt": {
                     "allowNull": true,
@@ -163,5 +161,5 @@
             "indexes": []
         }
     },
-    "revision": 6
+    "revision": 9
 }

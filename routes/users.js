@@ -88,6 +88,25 @@ router.get("/profile", function(req, res, next) {
   }
 });
 
+router.get("/profile/:id", function(req, res, next) {
+  let token = req.cookies.jwt;
+  if (token) {
+    authService.verifyUser(token)
+    .then(user => {
+      if (user.userId === parseInt(req.params.id)) {
+        user.password = "";
+        res.send(JSON.stringify(user));
+      } else {
+        res.status(401);
+        res.json("Invalid authentication token");
+      }
+    });
+  } else {
+    res.status(401);
+    res.json("Must be logged in");
+  }
+});
+
 // logout
 router.get("/logout", function(req, res, next) {
   // set a new jwt cookie that will immediately expire

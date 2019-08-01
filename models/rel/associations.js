@@ -1,12 +1,12 @@
 module.exports = function(models) {
     models.users.belongsToMany(models.products, 
         { 
-            through: models.wishlist,
+            through: models.user_products,
             foreignKey: 'userId'
         });
     models.products.belongsToMany(models.users,
         {
-            through: models.wishlist,
+            through: models.user_products,
             foreignKey: 'productId'
         });
 }

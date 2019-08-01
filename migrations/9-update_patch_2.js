@@ -6,30 +6,44 @@ var Sequelize = require('sequelize');
  * Actions summary:
  *
  * changeColumn "productId" on table "products"
+ * changeColumn "userId" on table "users"
  *
  **/
 
 var info = {
-    "revision": 4,
-    "name": "productai",
-    "created": "2019-07-19T02:03:06.292Z",
+    "revision": 9,
+    "name": "update_patch_2",
+    "created": "2019-08-01T19:38:10.365Z",
     "comment": ""
 };
 
 var migrationCommands = [{
-    fn: "changeColumn",
-    params: [
-        "products",
-        "productId",
-        {
-            "type": Sequelize.INTEGER(11),
-            "field": "productId",
-            "autoIncrement": true,
-            "primaryKey": true,
-            "allowNull": false
-        }
-    ]
-}];
+        fn: "changeColumn",
+        params: [
+            "products",
+            "productId",
+            {
+                "type": Sequelize.INTEGER(11).UNSIGNED,
+                "field": "productId",
+                "primaryKey": true,
+                "allowNull": false
+            }
+        ]
+    },
+    {
+        fn: "changeColumn",
+        params: [
+            "users",
+            "userId",
+            {
+                "type": Sequelize.INTEGER(11).UNSIGNED,
+                "field": "userId",
+                "primaryKey": true,
+                "allowNull": false
+            }
+        ]
+    }
+];
 
 module.exports = {
     pos: 0,
