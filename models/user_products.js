@@ -5,12 +5,20 @@ module.exports = function (sequelize, DataTypes) {
         userId: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            references:{
+                model: 'users',
+                key: 'userId'
+            }
         },
         productId: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            references: {
+                model: 'products',
+                key: 'productId'
+            }
         },
         createdAt: {
             type: DataTypes.DATE,
