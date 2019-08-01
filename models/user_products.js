@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('wishlist', {
+    return sequelize.define('user_products', {
         userId: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -21,6 +21,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     }, {
-            tableName: 'wishlist'
+            tableName: 'user_products'
         });
 };

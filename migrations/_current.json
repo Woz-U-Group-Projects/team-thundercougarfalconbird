@@ -120,14 +120,14 @@
             },
             "indexes": []
         },
-        "wishlist": {
-            "tableName": "wishlist",
+        "user_products": {
+            "tableName": "user_products",
             "schema": {
                 "userId": {
                     "allowNull": false,
                     "primaryKey": true,
                     "field": "userId",
-                    "unique": "wishlist_productId_userId_unique",
+                    "unique": "user_products_productId_userId_unique",
                     "references": {
                         "model": "users",
                         "key": "userId"
@@ -140,7 +140,7 @@
                     "allowNull": false,
                     "primaryKey": true,
                     "field": "productId",
-                    "unique": "wishlist_productId_userId_unique",
+                    "unique": "user_products_productId_userId_unique",
                     "references": {
                         "model": "products",
                         "key": "productId"
@@ -163,5 +163,5 @@
             "indexes": []
         }
     },
-    "revision": 6
+    "revision": 7
 }

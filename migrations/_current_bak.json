@@ -119,7 +119,49 @@
                 }
             },
             "indexes": []
+        },
+        "wishlist": {
+            "tableName": "wishlist",
+            "schema": {
+                "userId": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "userId",
+                    "unique": "wishlist_productId_userId_unique",
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "productId": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "productId",
+                    "unique": "wishlist_productId_userId_unique",
+                    "references": {
+                        "model": "products",
+                        "key": "productId"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "createdAt": {
+                    "allowNull": true,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": true,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
         }
     },
-    "revision": 5
+    "revision": 6
 }
