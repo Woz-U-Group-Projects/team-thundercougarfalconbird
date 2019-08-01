@@ -3,7 +3,7 @@
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('user_products', {
         userId: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.INTEGER(11).UNSIGNED,
             allowNull: false,
             primaryKey: true,
             references:{
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         productId: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.INTEGER(11).UNSIGNED,
             allowNull: false,
             primaryKey: true,
             references: {
