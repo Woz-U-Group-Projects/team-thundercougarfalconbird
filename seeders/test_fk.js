@@ -2,12 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('products',[{
-      productName : 'Sample-Product',
-      style : 'Sample-Style',
-      price : 5,
-      description : 'This is a sample description',
-      inventory : 2,
+    return queryInterface.bulkInsert('user_products',[{
+      userId : 1,
+      productId : 1,
       last_update : new Date()
     }], 
      {});
@@ -24,8 +21,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    queryInterface.bulkDelete('products', [{
-      productName :'Sample-Product'
+    queryInterface.bulkDelete('user_products', [{
+      userId : 1
     }])
     /*
       Add reverting commands here.

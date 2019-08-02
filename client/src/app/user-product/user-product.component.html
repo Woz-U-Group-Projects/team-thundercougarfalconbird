@@ -1,0 +1,22 @@
+<div>
+        <button [routerLink]="['/input/',userproduct.userId]">Add To Your Inventory</button>
+        <h3>{{ userproduct.firstName }}'s Products!</h3>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Inventory</th>
+                <th>Style</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of userproduct.products" [routerLink]="['/productview/',product.productId]">
+                    <td>{{ product.productName }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.inventory }}</td>
+                    <td>{{ product.style }}</td>
+                    <td>{{ product.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

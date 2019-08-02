@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { InventoryComponent } from './inventory/inventory.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { UserProductComponent } from './user-product/user-product.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     ProfileComponent, 
     ProductviewComponent, 
     InventoryComponent,  
-    WishlistComponent, 
+    UserProductComponent, 
   ],
   imports: [
     BrowserModule, 

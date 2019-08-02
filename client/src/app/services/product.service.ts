@@ -27,7 +27,7 @@ export class ProductService {
     return this.http.get<Product>(this.url + `productview/${productId}`, this.options);
   }
 
-  getProductList(): Observable<Product> {
-    return this.http.get<Product>(this.url + "productlist", this.options);
+  getProductList(id): Observable<Product> {
+    return this.http.get<Product>(this.url + `user_productlist/${id}`, this.options);
   }
 }

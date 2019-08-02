@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
       unique: true
     },
     password: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(225),
       allowNull: false
     },
     last_update: {
