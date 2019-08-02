@@ -8,10 +8,7 @@ module.exports = {
       email : 'johnDoe@test.com',
       username : 'johndoe',
       password : 'Password',
-      userImage : 'img.png',
-      admin : true,
-      createdAt : new Date(),
-      updatedAt : new Date()      
+      last_update : new Date()      
     }], 
      {});
      

@@ -9,12 +9,12 @@ router.post("/signup", function(req, res, next) {
   models.users
     .findOrCreate({
       where: {
-        username: req.body.username
+        username: req.body.username,
+        email: req.body.email
       },
       defaults: {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
         password: authService.hashPassword(req.body.password) // encrypt the user password
       }
     })

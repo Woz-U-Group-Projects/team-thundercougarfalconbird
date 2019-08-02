@@ -54,6 +54,31 @@ router.get('/productlist', function(req, res, next) {
   });
 });
 
+//Get user_productlist
+router.get('/user_productlist/:id', function (req, res, next) {
+  let token = req.cookies.jwt;
+  if (token) {
+      authService.verifyUser(token).then(user =>{
+      if (user.userId === parseInt(req.params.id)){
+      models.users
+        .findOne({
+          attributes:['userId', 'firstName'],
+          where: {
+            userId: parseInt(req.params.id)
+          },
+          include: [{
+            model: models.products,
+            attributes: ['productId', 'productName', 'inventory', 'style', 'price', 'description']
+          }]
+        })
+        .then(user_product => {
+          res.send(JSON.stringify(user_product));
+        })}});
+  } else {
+    res.render("Please Log in")
+  }
+});
+
 router.get('/productview', function(req, res, next) {
   models.products
   .findAll({})
