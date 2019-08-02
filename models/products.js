@@ -3,7 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     productId: {
-      type: DataTypes.INTEGER(11).UNSIGNED,
+      type: DataTypes.INTEGER(5).UNSIGNED,
       allowNull: false,
       primaryKey: true
     },
@@ -11,37 +11,26 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    department: {
-      type: DataTypes.STRING(45),
-      allowNull: true
-    },
     style: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
     price: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: true
     },
     description: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(225),
       allowNull: true
     },
-    productImage: {
-      type: DataTypes.STRING(255),
+    inventory: {
+      type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    rating: {
-      type: DataTypes.DECIMAL,
-      allowNull: true
-    },
-    createdAt: {
+    last_update: {
       type: DataTypes.DATE,
-      allowNull: true
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
     tableName: 'products'

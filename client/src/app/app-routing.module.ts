@@ -7,7 +7,6 @@ import { ProfileComponent } from "./profile/profile.component";
 import { InventoryComponent } from './inventory/inventory.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { ProductComponent } from './productlist/product.component';
 
 
 const routes: Routes = [
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: "home", component: HomeComponent },
   { path: "input/:id", component: InventoryComponent },
-  { path: "productlist", component: ProductComponent },
   { path: "productview/:id", component: ProductviewComponent },
   { path: "wishlist/:id", component: WishlistComponent }
 ];

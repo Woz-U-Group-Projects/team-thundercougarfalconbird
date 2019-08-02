@@ -3,23 +3,22 @@ var router = express.Router();
 var models = require('../models');
 var authService = require("../services/auth");
 
-router.post('/input', function (req, res, next) {
+router.post('/input/:id', function (req, res, next) {
   let token = req.cookies.jwt;
   if (token) {
     authService.verifyUser(token)
       .then(user => {
-        if (user.Admin === true) {
+        if (user.userId === parseInt(req.params.id)) {
           models.products
           .findOrCreate({
             where: {
               productName: req.body.productName
             },
             defaults: {
-              department: req.body.department,
               style: req.body.style,
               price: req.body.price,
               description: req.body.description,
-              productImage: req.body.productImage
+              inventory: req.body.inventory
             }
           })
           .spread(function(result, created) {
@@ -47,9 +46,9 @@ router.get('/productlist', function(req, res, next) {
       productId: product.productId,
       productName: product.productName,
       price: product.price,
-      department: product.department,
       style: product.style,
-      description: product.description
+      description: product.description,
+      inventory: product.inventory
     }));
     res.send(JSON.stringify(products));
   });
@@ -63,9 +62,9 @@ router.get('/productview', function(req, res, next) {
       productId: product.productId,
       productName: product.productName,
       price: product.price,
-      department: product.department,
       style: product.style,
-      description: product.description
+      description: product.description,
+      inventory: product.inventory
     }));
     res.send(JSON.stringify(products));
   });

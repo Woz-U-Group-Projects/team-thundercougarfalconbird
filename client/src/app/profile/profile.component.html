@@ -4,6 +4,5 @@
   Email: {{ user.email }}<br />
   UserName: {{ user.username }}<br />
   Logged In: {{ userService.loggedIn }}<br />
-  Admin: {{ user.admin }}
 </p>
-<button [routerLink]="['/wishlist/',user.userId]">Wishlist</button>
+<button [routerLink]="['/wishlist/',user.userId]">My Products</button>

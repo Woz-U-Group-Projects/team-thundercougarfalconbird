@@ -7,16 +7,11 @@
                     "allowNull": false,
                     "primaryKey": true,
                     "field": "productId",
-                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
                 },
                 "productName": {
                     "allowNull": false,
                     "field": "productName",
-                    "seqType": "Sequelize.STRING(45)"
-                },
-                "department": {
-                    "allowNull": true,
-                    "field": "department",
                     "seqType": "Sequelize.STRING(45)"
                 },
                 "style": {
@@ -25,33 +20,27 @@
                     "seqType": "Sequelize.STRING(45)"
                 },
                 "price": {
-                    "allowNull": false,
+                    "allowNull": true,
                     "field": "price",
                     "seqType": "Sequelize.DECIMAL"
                 },
                 "description": {
                     "allowNull": true,
                     "field": "description",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(225)"
                 },
-                "productImage": {
+                "inventory": {
                     "allowNull": true,
-                    "field": "productImage",
-                    "seqType": "Sequelize.STRING(255)"
+                    "field": "inventory",
+                    "seqType": "Sequelize.INTEGER(11)"
                 },
-                "rating": {
-                    "allowNull": true,
-                    "field": "rating",
-                    "seqType": "Sequelize.DECIMAL"
-                },
-                "createdAt": {
-                    "allowNull": true,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": true,
-                    "field": "updatedAt",
+                "last_update": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
+                    "field": "last_update",
                     "seqType": "Sequelize.DATE"
                 }
             },
@@ -64,55 +53,42 @@
                     "allowNull": false,
                     "primaryKey": true,
                     "field": "userId",
-                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
                 },
                 "firstName": {
-                    "allowNull": true,
+                    "allowNull": false,
                     "field": "firstName",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "lastName": {
-                    "allowNull": true,
+                    "allowNull": false,
                     "field": "lastName",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "email": {
-                    "allowNull": true,
+                    "allowNull": false,
                     "unique": true,
                     "field": "email",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "username": {
-                    "allowNull": true,
+                    "allowNull": false,
                     "unique": true,
                     "field": "username",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "password": {
-                    "allowNull": true,
+                    "allowNull": false,
                     "field": "password",
-                    "seqType": "Sequelize.STRING(255)"
+                    "seqType": "Sequelize.STRING(45)"
                 },
-                "userImage": {
-                    "allowNull": true,
-                    "field": "userImage",
-                    "seqType": "Sequelize.STRING(255)"
-                },
-                "admin": {
+                "last_update": {
+                    "allowNull": false,
                     "defaultValue": {
-                        "value": false
+                        "internal": true,
+                        "value": "Sequelize.Literal"
                     },
-                    "field": "admin",
-                    "seqType": "Sequelize.BOOLEAN"
-                },
-                "createdAt": {
-                    "allowNull": true,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": true,
-                    "field": "updatedAt",
+                    "field": "last_update",
                     "seqType": "Sequelize.DATE"
                 }
             },
@@ -132,7 +108,7 @@
                     "unique": "user_products_productId_userId_unique",
                     "onDelete": "CASCADE",
                     "onUpdate": "CASCADE",
-                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
                 },
                 "productId": {
                     "allowNull": false,
@@ -145,21 +121,20 @@
                     "unique": "user_products_productId_userId_unique",
                     "onDelete": "CASCADE",
                     "onUpdate": "CASCADE",
-                    "seqType": "Sequelize.INTEGER(11).UNSIGNED"
+                    "seqType": "Sequelize.INTEGER(5).UNSIGNED"
                 },
-                "createdAt": {
-                    "allowNull": true,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": true,
-                    "field": "updatedAt",
+                "last_update": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
+                    "field": "last_update",
                     "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 9
+    "revision": 1
 }

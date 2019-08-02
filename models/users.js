@@ -3,47 +3,36 @@
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('users', {
     userId: {
-      type: DataTypes.INTEGER(11).UNSIGNED,
+      type: DataTypes.INTEGER(5).UNSIGNED,
       allowNull: false,
       primaryKey: true
     },
     firstName: {
-      type: DataTypes.STRING(255),
-      allowNull: true
+      type: DataTypes.STRING(45),
+      allowNull: false
     },
     lastName: {
-      type: DataTypes.STRING(255),
-      allowNull: true
+      type: DataTypes.STRING(45),
+      allowNull: false
     },
     email: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
+      type: DataTypes.STRING(45),
+      allowNull: false,
       unique: true
     },
     username: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
+      type: DataTypes.STRING(45),
+      allowNull: false,
       unique: true
     },
     password: {
-      type: DataTypes.STRING(255),
-      allowNull: true
+      type: DataTypes.STRING(45),
+      allowNull: false
     },
-    userImage: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    admin: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    },
-    createdAt: {
+    last_update: {
       type: DataTypes.DATE,
-      allowNull: true
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
     tableName: 'users'
