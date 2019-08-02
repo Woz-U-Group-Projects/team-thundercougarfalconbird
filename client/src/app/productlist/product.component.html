@@ -1,1 +1,37 @@
+<<<<<<< Latoya-stylize
+<table>
+  
+  <tbody>
+    <tr *ngFor="let product of products" [routerLink]="['/productview/',product.productId]">
+      <td>{{ product.productName }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.department }}</td>
+      <td>{{ product.style }}</td>
+      <td>{{ product.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Department</th>
+            <th>Style</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr> 
+          <td>{{ product.productName }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.department }}</td>
+          <td>{{ product.style }}</td>
+          <td>{{ product.description }}</td>
+        </tr>
+      </tbody>
+</table>
+=======
 <p>product works!</p>
+>>>>>>> master
