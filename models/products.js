@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     productId: {
       type: DataTypes.INTEGER(5).UNSIGNED,
-      allowNull: false,
       primaryKey: true
     },
     productName: {

@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('users', {
     userId: {
       type: DataTypes.INTEGER(5).UNSIGNED,
-      allowNull: false,
+
       primaryKey: true
     },
     firstName: {

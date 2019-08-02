@@ -3,34 +3,25 @@ var router = express.Router();
 var models = require('../models');
 var authService = require("../services/auth");
 
-router.post('/input/:id', function (req, res, next) {
+router.post('/input', function (req, res, next) {
   let token = req.cookies.jwt;
   if (token) {
     authService.verifyUser(token)
       .then(user => {
-        if (user.userId === parseInt(req.params.id)) {
           models.products
-          .findOrCreate({
-            where: {
-              productName: req.body.productName
-            },
-            defaults: {
+          .create({
+          include: [{
+            model: models.user_products
+          }],
+              productName: req.body.productName,            
               style: req.body.style,
               price: req.body.price,
               description: req.body.description,
               inventory: req.body.inventory
-            }
-          })
-          .spread(function(result, created) {
-            if (created) {
-              res.json("Product successfully created");
-            } else {
-              res.json("This product already exists");
-            }
+        })
+          .then(product => {
+            res.send(JSON.stringify(product));
           });
-        } else {
-          res.render('error', { message: 'You are not a Admin' })
-        }
       })
   } else {
     res.render('error', { message: 'Must be logged in' }
@@ -64,7 +55,7 @@ router.get('/user_productlist/:id', function (req, res, next) {
         .findOne({
           attributes:['userId', 'firstName'],
           where: {
-            userId: parseInt(req.params.id)
+            
           },
           include: [{
             model: models.products,

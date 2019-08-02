@@ -19,7 +19,7 @@ export class UserProductComponent implements OnInit {
       console.log(params.get('id'))
        this.productService.getProductList(params.get('id')).subscribe(user_product =>{
           console.log(user_product);
-          user_product = user_product;
+          this.user_product = user_product;
       })   
       });
   }

@@ -1,5 +1,5 @@
 <h3>New User Sign Up</h3>
-<form>
+
   <div class="form-group">
       <label for="firstName">First Name</label>
       <input [(ngModel)]="user.firstName" class="form-control" id="firstName" placeholder="first name">
@@ -14,12 +14,11 @@
   </div>
   <div class="form-group">
       <label for="userName">Username </label>
-      <input [(ngModel)]="user.userName" class="form-control" id="userName" placeholder="username">
+      <input [(ngModel)]="user.username" class="form-control" id="userName" placeholder="username">
   </div>
   <div class="form-group">
       <label for="Password">Password</label>
-      <input [(ngModel)]="user.password" class="form-control" id="password" placeholder="password">
+      <input [(ngModel)]="user.password" class="form-control" id="password" placeholder="password" type="password">
   </div>
   
-  <button type="submit" class="btn btn-primary">SignUp</button>
-</form>
+  <button class="btn btn-primary" (click)="signup()">SignUp</button>
