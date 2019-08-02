@@ -1,8 +1,19 @@
 <h3>Login User</h3>
-<p>
-  <input [(ngModel)]="user.username" placeholder="username" />
-  <br />
-  <input [(ngModel)]="user.password" placeholder="password" type="password" />
-  <br />
-  <button (click)="login()">login</button>
-</p>
+<form>
+  
+  <div class="form-group">
+      <label for="Username">Username</label>
+      <input [(ngModel)]="user.username" class="form-control" id="Username" placeholder="Username">
+  </div>
+  <div class="form-group">
+      <label for="Password">Password</label>
+      <input [(ngModel)]="user.password" class="form-control" id="Password" placeholder="Password">
+  </div>
+  <div class="checkbox">
+      <label>
+          <input type="checkbox"> Remember me
+      </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
