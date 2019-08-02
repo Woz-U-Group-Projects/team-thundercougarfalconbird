@@ -1,18 +1,19 @@
 <div>
-    <h3>{{ wishlist.firstName }}'s Wishlist!</h3>
+    <button [routerLink]="['/input/',wishlist.userId]">Add To Your Inventory</button>
+    <h3>{{ wishlist.firstName }}'s Products!</h3>
     <table>
         <thead>
             <th>Name</th>
             <th>Price</th>
-            <th>Department</th>
+            <th>Inventory</th>
             <th>Style</th>
             <th>Description</th>
         </thead>
         <tbody>
-            <tr *ngFor="let product of wishlist.products">
+            <tr *ngFor="let product of wishlist.products" [routerLink]="['/productview/',product.productId]">
                 <td>{{ product.productName }}</td>
                 <td>{{ product.price }}</td>
-                <td>{{ product.department }}</td>
+                <td>{{ product.inventory }}</td>
                 <td>{{ product.style }}</td>
                 <td>{{ product.description }}</td>
             </tr>

@@ -12,7 +12,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { ProductComponent } from './productlist/product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { ProductComponent } from './productlist/product.component';
     ProductviewComponent, 
     InventoryComponent,  
     WishlistComponent, 
-    ProductComponent
   ],
   imports: [
     BrowserModule, 
