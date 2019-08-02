@@ -1,6 +1,6 @@
 <div>
-        <button [routerLink]="['/input/',userproduct.userId]">Add To Your Inventory</button>
-        <h3>{{ userproduct.firstName }}'s Products!</h3>
+        <button [routerLink]="['/input/']">Add To Your Inventory</button>
+        <h3>{{ user_product.firstName }}'s Products!</h3>
         <table>
             <thead>
                 <th>Name</th>
@@ -10,7 +10,7 @@
                 <th>Description</th>
             </thead>
             <tbody>
-                <tr *ngFor="let product of userproduct.products" [routerLink]="['/productview/',product.productId]">
+                <tr *ngFor="let product of user_product.products" [routerLink]="['/productview/',product.productId]">
                     <td>{{ product.productName }}</td>
                     <td>{{ product.price }}</td>
                     <td>{{ product.inventory }}</td>

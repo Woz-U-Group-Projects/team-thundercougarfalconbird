@@ -18,15 +18,9 @@ router.post("/signup", function(req, res, next) {
         password: authService.hashPassword(req.body.password) // encrypt the user password
       }
     })
-    .spread(function(result, created) {
-      if (created) {
-        // if the user was created, positive response
-        res.json("User successfully created");
-      } else {
-        // if the user was not created, negative response
-        res.json("This user already exists");
-      }
-    });
+    .then(user => {
+      res.send(JSON.stringify(user));
+    })
 });
 
 // login user and return JWT as cookie
