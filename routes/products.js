@@ -10,9 +10,9 @@ router.post('/input', function (req, res, next) {
       .then(user => {
           models.products
           .create({
-          include: [{
-            model: models.user_products
-          }],
+            where: {
+              userId: user.userId
+            },
               productName: req.body.productName,            
               style: req.body.style,
               price: req.body.price,
@@ -29,21 +29,21 @@ router.post('/input', function (req, res, next) {
   }
 });
 
-router.get('/productlist', function(req, res, next) {
-  models.products
-  .findAll({})
-  .then(foundProducts => {
-    const products = foundProducts.map(product =>({
-      productId: product.productId,
-      productName: product.productName,
-      price: product.price,
-      style: product.style,
-      description: product.description,
-      inventory: product.inventory
-    }));
-    res.send(JSON.stringify(products));
-  });
-});
+// router.get('/productlist', function(req, res, next) {
+//   models.products
+//   .findAll({})
+//   .then(foundProducts => {
+//     const products = foundProducts.map(product =>({
+//       productId: product.productId,
+//       productName: product.productName,
+//       price: product.price,
+//       style: product.style,
+//       description: product.description,
+//       inventory: product.inventory
+//     }));
+//     res.send(JSON.stringify(products));
+//   });
+// });
 
 //Get user_productlist
 router.get('/user_productlist/:id', function (req, res, next) {
@@ -55,7 +55,7 @@ router.get('/user_productlist/:id', function (req, res, next) {
         .findOne({
           attributes:['userId', 'firstName'],
           where: {
-            
+            userId: user.userId
           },
           include: [{
             model: models.products,
@@ -72,17 +72,16 @@ router.get('/user_productlist/:id', function (req, res, next) {
 
 router.get('/productview', function(req, res, next) {
   models.products
-  .findAll({})
-  .then(foundProducts => {
-    const products = foundProducts.map(product =>({
+  .findAll({
       productId: product.productId,
       productName: product.productName,
       price: product.price,
       style: product.style,
       description: product.description,
       inventory: product.inventory
-    }));
-    res.send(JSON.stringify(products));
+  })
+  .then(products => {
+    res.send(JSON.stringify(products));    
   });
 });
 
