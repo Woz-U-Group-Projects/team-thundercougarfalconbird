@@ -18,7 +18,7 @@ export class ProductviewComponent implements OnInit {
    
     this.route.paramMap.subscribe(params => {
       console.log(params.get('id'))
-       this.productService.getProduct(params.get('id')).subscribe(productId =>{
+       this.productService.getProductView(params.get('id')).subscribe(productId =>{
           console.log(productId);
           this.product = productId;
       })   

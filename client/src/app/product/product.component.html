@@ -1,0 +1,8 @@
+<div>
+  Product Name: {{ product.productName }}<br />
+  Price: {{ product.price }}<br />
+  Style: {{ product.style }}<br />
+  Description: {{ product.description }}<br />
+  Inventory: {{ product.inventory }}<br />
+</div>
+<button [routerLink]="['/user_productlist/',user.userId]">My Products</button>
