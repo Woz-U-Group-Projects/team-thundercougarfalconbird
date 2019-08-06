@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     last_update: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
